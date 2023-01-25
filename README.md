@@ -1,2 +1,2 @@
 # pictureshares
-this is a picture share project, you can a some interesting picures in it
+this is a project that you can see some interesting pictures
