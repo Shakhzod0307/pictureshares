@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import View
 
-from .models import Picture, Category,Video
+from .models import Picture, Category
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -25,21 +25,21 @@ def PictureDetail(request, pk):
     return render(request, template_name='picture_detail.html',context=context)
 
 
-def VideoList(request):
-    category = request.GET.get('category')
-    if category is None:
-        videos = Video.objects.all()
-    else:
-        videos = Video.objects.filter(category__name=category)
-
-    categories = Category.objects.all()
-    context = {'categories': categories, 'videos': videos}
-    return render(request, template_name='videos.html',context=context)
-
-
-def VideoDetail(request, pk):
-    video = Video.objects.get(id=pk)
-    context = {'video': video}
-    return render(request, template_name='video_detail.html',context=context)
+# def VideoList(request):
+#     category = request.GET.get('category')
+#     if category is None:
+#         videos = Video.objects.all()
+#     else:
+#         videos = Video.objects.filter(category__name=category)
+#
+#     categories = Category.objects.all()
+#     context = {'categories': categories, 'videos': videos}
+#     return render(request, template_name='videos.html',context=context)
+#
+#
+# def VideoDetail(request, pk):
+#     video = Video.objects.get(id=pk)
+#     context = {'video': video}
+#     return render(request, template_name='video_detail.html',context=context)
 
 

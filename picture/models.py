@@ -27,15 +27,15 @@ class Picture(models.Model):
     #
 
 
-class Video(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
-    file = models.FileField(upload_to='media/video', null=True,
-                            blank=True, validators=[
-            FileExtensionValidator(allowed_extensions=[
-                'MOV', 'avi', 'mp4', 'webm', 'mkv'
-            ])
-        ])
-    description = models.TextField()
-
-    def __str__(self):
-        return self.description
+# class Video(models.Model):
+#     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+#     file = models.FileField(upload_to='media/video', null=True,
+#                             blank=True, validators=[
+#             FileExtensionValidator(allowed_extensions=[
+#                 'MOV', 'avi', 'mp4', 'webm', 'mkv'
+#             ])
+#         ])
+#     description = models.TextField()
+#
+#     def __str__(self):
+#         return self.description
